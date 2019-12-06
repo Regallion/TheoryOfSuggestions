@@ -1193,8 +1193,8 @@
 				"run": {
 					"stamina": 2
 				},
-				"effect": {
-					"w_fazbitknowledge": 20
+				"result": {
+					"w_fazbitknowledge": 200
 				},
 				"encs": [
 					"enc_w_faz_nothingthere",
