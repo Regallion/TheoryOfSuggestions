@@ -1259,7 +1259,7 @@
 				"desc": "Nothing there.",
 				"effect": {
 					"madness": "2~3",
-					"unease": "4~6"
+					"unease": "3~5"
 				},
 				"result": {
 					"w_fazbitknowledge": "1~3",
@@ -1272,7 +1272,7 @@
 				"desc": "Tiny, malformed metal skeletons litter the floor.",
 				"effect": {
 					"weary": "2~3",
-					"unease": "4~6"
+					"unease": "3~5"
 				},
 				"result": {
 					"w_fazbitknowledge": "1~3",
@@ -1286,7 +1286,7 @@
 				"desc": "the machine throws chunks of metal into a cauldron. Round, bouncy balls emerge.",
 				"effect": {
 					"bf": "2~3",
-					"unease": "4~6"
+					"unease": "3~5"
 				},
 				"result": {
 					"w_fazbitknowledge": "1~3",
@@ -1300,7 +1300,7 @@
 				"desc": "As you clear your eyes, you realize you've been meticulously covered in magical paint.",
 				"effect": {
 					"bf": "2~3",
-					"unease": "4~6"
+					"unease": "3~5"
 				},
 				"result": {
 					"w_fazbitknowledge": "1~3",
@@ -1314,7 +1314,7 @@
 				"desc": "tangled metal skeletons hover behind you.",
 				"effect": {
 					"bf": "2~3",
-					"unease": "4~6"
+					"unease": "3~5"
 				},
 				"result": {
 					"w_fazbitknowledge": "1~3",
@@ -1327,7 +1327,7 @@
 				"desc": "Deep, metallic laugh echoes through the facility.",
 				"effect": {
 					"madness": "2~3",
-					"unease": "4~6"
+					"unease": "3~5"
 				},
 				"result": {
 					"w_fazbitknowledge": "1~3",
@@ -1340,7 +1340,7 @@
 				"desc": "A hysterical, repeating laugh fills the halls.",
 				"effect": {
 					"madness": "2~3",
-					"unease": "4~6"
+					"unease": "3~5"
 				},
 				"result": {
 					"w_fazbitknowledge": "1~3",
@@ -1353,7 +1353,7 @@
 				"desc": "the crumbling pages reveal little.",
 				"effect": {
 					"rage": "2~3",
-					"unease": "4~6"
+					"unease": "3~5"
 				},
 				"result": {
 					"w_fazbitknowledge": "1~3",
@@ -1367,7 +1367,7 @@
 				"desc": "A calmly sitting skeleton suddenly reaches for you, screeching.",
 				"effect": {
 					"madness": "2~3",
-					"unease": "4~6"
+					"unease": "3~5"
 				},
 				"result": {
 					"w_fazbitknowledge": "1~3",
@@ -1380,7 +1380,7 @@
 				"name": "materials stockpile",
 				"desc": "You happen upon a store of valuable materials.",
 				"effect": {
-					"unease": "5~8"
+					"unease": "4~6"
 				},
 				"result": {
 					"w_fazbitknowledge": "1~3",
