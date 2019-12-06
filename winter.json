@@ -281,7 +281,7 @@
 				"mod": {
 					"crafting.max": 1,
 					"gems.max": 20,
-					"gem.max": 10
+					"magicgems.max": 10
 				}
 			},
 			{
