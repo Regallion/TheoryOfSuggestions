@@ -1324,7 +1324,7 @@
 			{
 				"id": "enc_w_faz_boominglaugh",
 				"name": "booming laugh",
-				"desc": "Deep, mettalic laugh echoes through the facility.",
+				"desc": "Deep, metallic laugh echoes through the facility.",
 				"effect": {
 					"madness": "2~3",
 					"unease": "4~6"
