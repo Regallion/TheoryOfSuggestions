@@ -45,7 +45,6 @@
 				"id": "snowman",
 				"name": "snomunculus",
 				"desc": "A being of living snow",
-				"require": "g.snowman>=1",
 				"max": 5,
 				"mod": {
 					"frost.rate": 1,
@@ -82,7 +81,6 @@
 				"id": "winteressence",
 				"name": "essence of winter",
 				"desc": "As you go deeper into the winter, understanding dawns.",
-				"require": "g.winteressence>0",
 				"max": 10000
 			},
 			{
@@ -96,10 +94,11 @@
 			},
 			{
 				"id": "ice",
-				"tags": "manas",
 				"desc": "ice mana",
 				"require": "g.icelore>=1",
-				"max": 0
+				"max": 0,
+				"color": "#44beeb",
+				"tags": "manas"
 			},
 			{
 				"id": "snowdrop",
@@ -149,6 +148,7 @@
 				"require": "g.emblemofice>=1",
 				"verb": "building",
 				"length": 10,
+				"fill": "snowman",
 				"cost": {
 					"livingsnow": 10,
 					"souls": 1
@@ -276,7 +276,7 @@
 			{
 				"id": "w_fazbit1",
 				"name": "old forms",
-				"desc": "An old log detailing the ordering of materials for production. It appears this place required a LOT of materials to run",
+				"desc": "A dusty log detailing the ordering of materials for production. It appears this place required a LOT of materials to run",
 				"require": "g.w_fazbitknowledge>=500",
 				"mod": {
 					"crafting.max": 1,
@@ -378,7 +378,7 @@
 			},
 			{
 				"id": "winterboon",
-				"name": "Winter's boon",
+				"name": "winter's boon",
 				"desc": "A small piece of winter finds a home within you",
 				"require": "g.winteressence>=1",
 				"cost": {
@@ -391,26 +391,26 @@
 			},
 			{
 				"id": "winteraward",
-				"name": "Winter's reward",
+				"name": "winter's reward",
 				"desc": "You can feel the chill spreading",
 				"require": "g.winteressence>=10",
 				"cost": {
 					"livingsnow": 30,
-					"snowman": 15
+					"snowman": 10
 				},
 				"mod": {
-					"waterlore2.max": 3,
+					"waterlore2.max": 1,
 					"icelore.rate": 50
 				}
 			},
 			{
 				"id": "winterhowl",
-				"name": "Winter's howl",
+				"name": "winter's howl",
 				"desc": "A howling wind surrounds you, always",
 				"require": "g.winteressence>=100",
 				"cost": {
-					"livingsnow": 70,
-					"snowman": 30
+					"livingsnow": 40,
+					"snowman": 15
 				},
 				"mod": {
 					"ice.max": 10,
@@ -419,44 +419,43 @@
 			},
 			{
 				"id": "winterchill",
-				"name": "Winter's chill",
-				"desc": "People around you shiver uncontrollably",
+				"name": "winter's chill",
+				"desc": "People around you start to shiver uncontrollably.",
 				"require": "g.winteressence>=500",
 				"cost": {
 					"livingsnow": 50,
-					"snowman": 25,
+					"snowman": 20,
 					"watergem": 75
 				},
 				"mod": {
-					"waterlore2.max": 3,
+					"waterlore2.max": 1,
 					"icelore.rate": "200%"
 				}
 			},
 			{
 				"id": "winterbreath",
-				"name": "Winter's breath",
-				"desc": "Your very presence is enough to turn the warmest summer to coldest winter",
+				"name": "winter's breath",
+				"desc": "Your mere presence is enough to turn the warmest summer to a winter night.",
 				"require": "g.winteressence>=1000",
 				"cost": {
-					"livingsnow": 70,
-					"snowman": 30,
+					"livingsnow": 60,
+					"snowman": 25,
 					"watergem": 100,
 					"waterrune": 20
 				},
 				"mod": {
 					"icelore.max": 10,
-					"icelore.rate": 500,
 					"icelore.rate": "200%"
 				}
 			},
 			{
 				"id": "winterenvoy",
-				"name": "Winter's envoy",
+				"name": "winter's envoy",
 				"desc": "You spread the joy of the cold far and wide, for the winter has come",
 				"require": "g.winteressence>=5000",
 				"cost": {
-					"livingsnow": 100,
-					"snowman": 50,
+					"livingsnow": 80,
+					"snowman": 30,
 					"watergem": 150,
 					"waterrune": 25
 				},
@@ -472,7 +471,7 @@
 			},
 			{
 				"id": "wintermastery",
-				"name": "Master of winter",
+				"name": "master of winter",
 				"desc": "You braved every blizzard and stayed cool throughout. Congratulations!",
 				"require": "g.winteressence>=10000",
 				"cost": {
@@ -1715,39 +1714,41 @@
 			}
 		],
 		"rares": [
-			{
-				"id": "iceorb",
-				"name": "orb of endless winter",
-				"desc": "A snowglobe with magical powers. It reminds you of colder days.",
-				"level": 10,
-				"save": true,
-				"unique": true,
-				"type": "weapon",
-				"tohit": 5,
-				"cost": 100,
-				"attack": {
-					"name": "blizzard",
-					"targets": "enemies",
-					"dot": {
-						"duration": 20,
-						"kind": "ice",
-						"dmg": "5~12",
-						"mod": {
-							"speed": -3
-						}
-					}
-				},
-				"mod": {
-					"ice.rate": "20%",
-					"ice.max": "20%",
-					"icelore.rate": 2,
-					"water.rate": "20%",
-					"water.max": "20%",
-					"waterlore.rate": 2,
-					"fire.rate": "-80%",
-					"fire.max": "-80%"
-				}
-			}
+			            {
+                "id": "iceorb",
+                "name": "orb of winters",
+                "desc": "A snowglobe with magical powers. It reminds you of colder days.",
+                "level": 10,
+                "save": true,
+                "unique": true,
+                "type": "weapon",
+                "tohit": 5,
+                "cost": 100,
+                "attack": {
+                    "name": "blizzard",
+                    "damage": "5~12",
+                    "kind": "water",
+                    "targets": "enemies",
+                    "dot": {
+                        "duration": 20,
+                        "kind": "water",
+                        "damage": "5~12",
+                        "mod": {
+                            "speed": -5
+                        }
+                    }
+                },
+                "mod": {
+                    "ice.rate": "20%",
+                    "ice.max": "20%",
+                    "icelore.rate": 2,
+                    "water.rate": "20%",
+                    "water.max": "20%",
+                    "waterlore.rate": 2,
+                    "fire.rate": "-80%",
+                    "fire.max": "-80%"
+                }
+            }
 		]
 	}
 }
