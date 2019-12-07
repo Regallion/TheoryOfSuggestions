@@ -376,7 +376,7 @@
         "desc":"You can feel the chill spreading",
         "require":"g.winteressence>=10",
         "cost":{
-          "livingsnow"30,
+          "livingsnow": 30,
 		  "snowman":10
         },
         "mod":{
