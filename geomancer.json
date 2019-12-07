@@ -5,7 +5,7 @@
 			{
 				"id": "hammerlore",
 				"desc": "The anvil or the skull, it makes no difference.",
-				"require": "g.geomancer>0||g.earthshaker>0||g.titan>0",
+				"require": "(g.geomancer_new+g.geomancer)>0||g.earthshaker>0||g.titan>0",
 				"need": "armssource",
 				"level": 3,
 				"buy": {
@@ -25,7 +25,7 @@
 			{
 				"id": "geosculpting",
 				"desc": "Shape the earth.",
-				"require": "g.geomancer>0||g.earthshaker>0",
+				"require": "(g.geomancer_new+g.geomancer)>0||g.earthshaker>0",
 				"level": 3,
 				"buy": {
 					"sp": 2
@@ -140,7 +140,7 @@
 			{
 				"id": "tamedroads",
 				"name": "tamed pathway",
-				"require": "g.geomancer>0&&g.dist>=200",
+				"require": "(g.geomancer_new+g.geomancer)>0&&g.dist>=200",
 				"desc": "Train roads around your home to behave.",
 				"cost": {
 					"gold": 3000,
@@ -171,7 +171,7 @@
 				"id": "rockcollection",
 				"name": "Minerals collection",
 				"desc": "Sorted by hardness.",
-				"require": "g.geomancer>0",
+				"require": "(g.geomancer_new+g.geomancer)>0",
 				"max": 3,
 				"cost": {
 					"gold": 500,
@@ -191,11 +191,11 @@
 				"cost": {
 					"gold": 5000,
 					"research": 7500,
-					"earthrunes": 10
+					"earthrune": 10
 				},
 				"mod": {
 					"gems.rate": 0.1,
-					"mine.effect.gems": 0.1,
+					"act_mine.effect.gems": 0.1,
 					"player.fame": 5,
 					"hammerlore.max": 2,
 					"geoscuplting.max": 2
@@ -213,7 +213,7 @@
 					"earthgem": 20
 				},
 				"mod": {
-					"mine.effect.gems": 0.1,
+					"act_mine.effect.gems": 0.1,
 					"hammerlore.max": 1
 				}
 			},
@@ -227,7 +227,7 @@
 					"gold": 10000,
 					"research": 15000,
 					"tomes": 100,
-					"earthrunes": 50
+					"earthrune": 50
 				},
 				"mod": {
 					"hammerlore.max": 2,
@@ -368,13 +368,10 @@
 					"tohit": -5,
 					"kind": "earth",
 					"dot": {
-						"id": "fissure",
 						"kind": "earth",
-						"dot": {
-							"duration": 2,
-							"mod": {
-								"speed": -500
-							}
+						"duration": 2,
+						"mod": {
+							"speed": -500
 						}
 					}
 				}
@@ -408,7 +405,7 @@
 				"desc": "Lord of rocks.",
 				"tags": "t_tier2",
 				"actdesc": "Become a geomancer, a master of perseverance.",
-				"require": "g.tier1>0&&g.earthlore>=10&&tier2==0",
+				"require": "g.tier1>0&&g.earthlore>=10&&g.tier2==0",
 				"cost": {
 					"research": 1000,
 					"arcana": 15,
@@ -433,7 +430,7 @@
 				"desc": "master of the tectonics.",
 				"tags": "t_tier4",
 				"actdesc": "Become an earthshaker.",
-				"require": "g.tier3>0&&g.earthlore>=20&&tier4==0",
+				"require": "g.tier3>0&&g.earthlore>=20&&g.tier4==0",
 				"cost": {
 					"research": 4000,
 					"arcana": 25,
@@ -458,7 +455,7 @@
 				"desc": "One with the earth.",
 				"tags": "t_tier6",
 				"actdesc": "Become a titan.",
-				"require": "g.tier5>0&&(g.earthshaker+g.geomancer)>0&&g.hammerlore>10&&g.geosculpting>=10&&tier6==0",
+				"require": "g.tier5>0&&(g.earthshaker+g.geomancer+g.geomancer_new)>0&&g.hammerlore>=10&&g.geosculpting>=10&&g.tier6==0",
 				"cost": {
 					"research": 10000,
 					"arcana": 50,
