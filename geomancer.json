@@ -198,7 +198,7 @@
 					"act_mine.effect.gems": 0.1,
 					"player.fame": 5,
 					"hammerlore.max": 2,
-					"geoscuplting.max": 2
+					"geosculpting.max": 2
 				}
 			},
 			{
@@ -220,7 +220,7 @@
 			{
 				"id": "mythicanvil",
 				"name": "Mythic anvil",
-				"desc": "made of mythical metals, this anvil can withstand even a titan's power",
+				"desc": "Made of mythical metals, this anvil can withstand even a titan's power",
 				"require": "g.titan>0",
 				"max": 1,
 				"cost": {
@@ -239,7 +239,7 @@
 				"id": "undertunnels",
 				"name": "Underground pathways",
 				"desc": "A twisting maze of passages, all alike",
-				"require": "g.geoscuplting>=10",
+				"require": "g.geosculpting>=10",
 				"max": 1,
 				"cost": {
 					"gold": 5000,
@@ -257,7 +257,7 @@
 				"name": "to sand",
 				"desc": "you briefly turn into fine sand.",
 				"school": "earth",
-				"require": "g.titan&&g.geosculpting>11",
+				"require": "g.titan>0&&g.geosculpting>11",
 				"level": 15,
 				"buy": {
 					"research": 8000,
@@ -483,6 +483,7 @@
 				"name": "Titan's hammer",
 				"desc": "Wrought from the hardest of metals, it hums with the energies of the earth.",
 				"save": true,
+				"type": "weapon",
 				"unique": true,
 				"attack": {
 					"kind": "blunt",
