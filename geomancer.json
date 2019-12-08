@@ -54,14 +54,14 @@
 				"at": {
 					"10": {
 						"effect.gems.max": 0.0002,
-						"effect.magicgem.max": 0.0002
+						"effect.magicgems.max": 0.0002
 					},
 					"50": {
 						"effect.earthgem": 0.01
 					},
 					"100": {
 						"effect.gems.max": 0.0002,
-						"effect.magicgem.max": 0.0002
+						"effect.magicgems.max": 0.0002
 					},
 					"250": {
 						"effect.earthgem": 0.01
@@ -74,7 +74,7 @@
 				"effect": {
 					"earthgem": 0.01,
 					"gems.max": 0.0002,
-					"magicgem.max": 0.0002
+					"magicgems.max": 0.0002
 				},
 				"result": {
 					"geosculpting.max": 0.01
