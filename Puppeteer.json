@@ -628,7 +628,7 @@
 			{
 				"id": "masterassembler",
 				"name": "master of assembly",
-				"desc": "remarkable efficiency in creating any kind of form",
+				"desc": "Remarkable efficiency in creating any kind of form",
 				"require": "(g.mechamancer+g.mechanist)>0",
 				"max": 1,
 				"cost": {
@@ -725,7 +725,7 @@
 				"cost": {
 					"gold": 300,
 					"research": 500,
-					"space": 40,
+					"space": 35,
 					"arcana": 5
 				},
 				"mod": {
@@ -743,7 +743,7 @@
 				"cost": {
 					"gold": 500,
 					"research": 500,
-					"space": 15,
+					"space": 20,
 					"spiritgem": 5
 				},
 				"mod": {
@@ -759,7 +759,7 @@
 				"cost": {
 					"gold": 800,
 					"research": 1000,
-					"space": 60,
+					"space": 55,
 					"gems": 30
 				},
 				"mod": {
@@ -787,13 +787,13 @@
 			{
 				"id": "shapinglab",
 				"name": "shaping laboratory",
-				"desc": "a facility for growing mind-crystals and pre-formed automata bodies.",
+				"desc": "A facility for growing mind-crystals and pre-formed automata bodies.",
 				"require": "g.mechamancer>0",
 				"max": 2,
 				"cost": {
 					"gold": 800,
 					"research": 1000,
-					"space": 60,
+					"space": 70,
 					"gems": 30
 				},
 				"mod": {
@@ -814,14 +814,14 @@
 			{
 				"id": "machinae",
 				"name": "machinae",
-				"desc": "Capable of anything it's owner would want it to do.",
+				"desc": "Towering hulks of metal, capable of anything it's owner would want it to do.",
 				"max": 20,
 				"flavor": "Beep boop."
 			},
 			{
 				"id": "automatas",
 				"name": "automata",
-				"desc": "Smart and capable of learning.",
+				"desc": "Made of translucent crystal. Smart and capable of learning.",
 				"max": 20,
 				"flavor": "It's not smarter than you, surely."
 			}
@@ -831,7 +831,7 @@
 				"id": "puppetattacker",
 				"tags": "puppet",
 				"name": "Aggressor",
-				"level": 15,
+				"level": 10,
 				"evil": 50,
 				"kind": "puppet",
 				"hp": 200,
@@ -839,8 +839,8 @@
 				"defense": 20,
 				"attack": [
 					{
-						"name": "Slash",
-						"kind": "slashing",
+						"name": "Stab",
+						"kind": "pierce",
 						"dmg": "20~30"
 					}
 				]
@@ -849,7 +849,7 @@
 				"id": "charger",
 				"tags": "machina",
 				"name": "Charger",
-				"level": 15,
+				"level": 20,
 				"evil": 50,
 				"kind": "machina",
 				"hp": 500,
@@ -878,13 +878,12 @@
 				"id": "autoslayer",
 				"tags": "automata",
 				"name": "Autoslayer",
-				"level": 18,
+				"level": 30,
 				"evil": 50,
 				"kind": "automata",
 				"hp": 700,
 				"tohit": 20,
-				"defense": 150,
-				"regen": 10,
+				"defense": 50,
 				"attack": [
 					{
 						"name": "Bleed dry",
@@ -898,8 +897,44 @@
 					{
 						"name": "Slice",
 						"tohit": 10,
-						"kind": "slashing",
+						"kind": "slash",
 						"dmg": "80~100"
+					},
+					{
+						"name": "Dice",
+						"tohit": 50,
+						"kind": "slash",
+						"dmg": "60~70"
+					},
+					{
+						"name": "Mince",
+						"tohit": -10,
+						"kind": "slash",
+						"dmg": "90~110"
+					},
+					{
+						"name": "Chop",
+						"tohit": -20,
+						"kind": "slash",
+						"dmg": "100~120"
+					},
+					{
+						"name": "Stab",
+						"tohit": 100,
+						"kind": "pierce",
+						"dmg": "50~60"
+					},
+					{
+						"name": "Mash",
+						"kind": "blunt",
+						"dmg": "0-200"
+					},
+					{
+						"name": "Recover",
+						"targets": "self",
+						"effect": {
+							"hp": 250
+						}
 					}
 				]
 			}
