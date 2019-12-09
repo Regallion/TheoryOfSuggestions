@@ -269,7 +269,7 @@
 				"id": "clockworkexpansion",
 				"name": "Clockwork expansion",
 				"desc": "Expand the clockwork home with additional materials",
-				"require": "g.puppetry>=5",
+				"require": "g.puppetry>=5&&(g.puppeteer+g.mechanist+g.mechamancer)>0",
 				"max": 2,
 				"cost": {
 					"puppets": 20
