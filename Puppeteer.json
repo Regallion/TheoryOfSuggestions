@@ -953,7 +953,7 @@
 				"name": "mechamancer",
 				"desc": "Master of the magical constructs",
 				"tags": "t_tier5",
-				"require": "g.tier4>0&&g.magiphysics>=5&&g.machinacreation>=5&&(g.puppeteer+g.mechanist)>0&&g.tier5==0",
+				"require": "g.tier4>0&&g.magiphysics>=5&&g.machinacreation>=9&&(g.puppeteer+g.mechanist)>0&&g.tier5==0",
 				"cost": {
 					"research": 20000,
 					"arcana": 30,
