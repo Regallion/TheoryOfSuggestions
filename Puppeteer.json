@@ -645,7 +645,7 @@
 				"name": "animate puppet",
 				"school": "animation",
 				"require": "g.puppetry>=5",
-				"level": 8,
+				"level": 1,
 				"buy": {
 					"research": 500,
 					"puppets": 5
@@ -661,7 +661,7 @@
 				"name": "assemble charger",
 				"school": "animation",
 				"require": "g.machinacreation>=5",
-				"level": 10,
+				"level": 1,
 				"buy": {
 					"research": 8000,
 					"machinae": 10
@@ -676,7 +676,7 @@
 				"name": "Shape autoslayer",
 				"school": "animation",
 				"require": "g.automatasculpting>=5",
-				"level": 20,
+				"level": 1,
 				"buy": {
 					"research": 8000,
 					"automatas": 20
@@ -736,7 +736,7 @@
 			},
 			{
 				"id": "puppetautomation",
-				"name": "Puppet assembly line",
+				"name": "puppet assembly line",
 				"desc": "A dedicated assembly line for automated production of puppets.",
 				"require": "g.puppeteer>0",
 				"max": 2,
@@ -770,7 +770,7 @@
 			},
 			{
 				"id": "machinaautomation",
-				"name": "Machina assembly line",
+				"name": "machina assembly line",
 				"desc": "A dedicated assembly line for automated production of machina.",
 				"require": "g.mechanist>0",
 				"max": 2,
