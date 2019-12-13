@@ -1,0 +1,583 @@
+{
+	"module": "arcanescribe",
+	"data": {
+		"skills": [
+			{
+				"id": "sigillore",
+				"name": "Sigil lore",
+				"desc": "Study the art of embedding sigils into crafted spells. This is considered to be an extemely advanced discipline by most.",
+				"require": "g.spellcraft>=5",
+				"level": 30,
+				"buy": {
+					"sp": 50
+				},
+				"run": {
+					"stamina": 0.5
+				},
+				"result": {
+					"sp": 0.05
+				},
+				"mod": {
+					"userSpells.max": 0.5,
+					"scraft": 1,
+					"spelllist.max": 0.5
+				}
+			}
+		],
+		"actions": [
+			{
+				"id": "imbuesigilgem",
+				"name": "inscribe gem (sigils)",
+				"require": "g.sigillore.exp>0",
+				"tags": "gemimbue",
+				"fill": "sigilsgem",
+				"cost": {
+					"managem": 2,
+					"research": 500,
+					"gems": 1,
+					"mana": 5
+				},
+				"result": {
+					"sigilsgem": 1
+				}
+			}
+		],
+		"upgrades": [
+			{
+				"id": "studysigils",
+				"name": "study sigils",
+				"desc": "Spend some time studying the base principles behind the sigil creation",
+				"require": "g.sigillore.exp>0",
+				"max": 20,
+				"cost": {
+					"gold": 5000,
+					"research": 4000,
+					"runestones": 1,
+					"sigilsgem": 5
+				},
+				"mod": {
+					"sigillore.max": 1,
+					"sigillore.rate": "20+10%",
+					"studysigils.cost.gold": 1000,
+					"studysigils.cost.research": 1500,
+					"studysigils.cost.runestones": 1,
+					"studysigils.cost.sigilsgem": 5
+				}
+			},
+			{
+				"id": "sigilaffinity",
+				"name": "sigil affinity",
+				"require": "g.arcanescribe>0",
+				"desc": "Develop a natural affinity for sigil-scribing.",
+				"cost": {
+					"gold": 7000,
+					"research": 8000,
+					"runestones": 15,
+					"sigilsgem": 25
+				},
+				"mod": {
+					"spells.sigils.level": -1
+				},
+				"flavor": "Write what you know"
+			},
+			{
+				"id": "sigilmastery",
+				"name": "sigil mastery",
+				"require": "g.thaumaturge>0",
+				"desc": "develop a natural affinity for sigil-scribing.",
+				"cost": {
+					"gold": 7000,
+					"research": 8000,
+					"runestones": 15,
+					"sigilsgem": 25
+				},
+				"mod": {
+					"spells.sigils.level": -1
+				},
+				"flavor": "Oof"
+			}
+		],
+		"spells": [
+			{
+				"id": "sigilofhit",
+				"name": "sigil of aiming",
+				"desc": "woven into a spell, increases it's accuracy.",
+				"school": "sigils",
+				"require": "g.sigillore>=1",
+				"level": 1,
+				"buy": {
+					"sigilsgem": 5
+				},
+				"cost": {
+					"mana": 2
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.tohit": 5
+					}
+				}
+			},
+			{
+				"id": "sigiloffire",
+				"name": "sigil of fire",
+				"desc": "woven into a spell, increses the potency of fire spells.",
+				"school": "sigils",
+				"require": "g.sigillore>=5",
+				"level": 3,
+				"buy": {
+					"sigilsgem": 10
+				},
+				"cost": {
+					"fire": 4
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.bonuses.fire": 1
+					}
+				}
+			},
+			{
+				"id": "sigilofwater",
+				"name": "sigil of water",
+				"desc": "woven into a spell, increses the potency of water spells.",
+				"school": "sigils",
+				"require": "g.sigillore>=5",
+				"level": 3,
+				"buy": {
+					"sigilsgem": 10
+				},
+				"cost": {
+					"water": 4
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.bonuses.water": 1
+					}
+				}
+			},
+			{
+				"id": "sigilofearth",
+				"name": "sigil of earth",
+				"desc": "woven into a spell, increses the potency of earth spells.",
+				"school": "sigils",
+				"require": "g.sigillore>=5",
+				"level": 3,
+				"buy": {
+					"sigilsgem": 10
+				},
+				"cost": {
+					"earth": 4
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.bonuses.earth": 1
+					}
+				}
+			},
+			{
+				"id": "sigilofair",
+				"name": "sigil of air",
+				"desc": "woven into a spell, increses the potency of air spells.",
+				"school": "sigils",
+				"require": "g.sigillore>=5",
+				"level": 3,
+				"buy": {
+					"sigilsgem": 10
+				},
+				"cost": {
+					"air": 4
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.bonuses.air": 1
+					}
+				}
+			},
+			{
+				"id": "sigilofcharge",
+				"name": "sigil of mana charge",
+				"desc": "woven into a spell, overcharges mana spells.",
+				"school": "sigils",
+				"require": "g.sigillore>=7&&g.arcanescribe>0",
+				"level": 3,
+				"buy": {
+					"sigilsgem": 20
+				},
+				"cost": {
+					"mana": 5
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.bonuses.mana": 2,
+						"spells.cost.mana": 1
+					}
+				}
+			},
+			{
+				"id": "sigiloffireburst",
+				"name": "sigil of fire burst",
+				"desc": "woven into a spell, increses the potency of fire spells, at a cost.",
+				"school": "sigils",
+				"require": "g.sigillore>=7&&g.arcanescribe>0",
+				"level": 5,
+				"buy": {
+					"sigilsgem": 25
+				},
+				"cost": {
+					"fire": 4
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.bonuses.fire": 2,
+						"spells.cost.fire": 1
+					}
+				}
+			},
+			{
+				"id": "sigilofwaterburst",
+				"name": "sigil of water burst",
+				"desc": "woven into a spell, increses the potency of water spells, at a cost.",
+				"school": "sigils",
+				"require": "g.sigillore>=7&&g.arcanescribe>0",
+				"level": 5,
+				"buy": {
+					"sigilsgem": 25
+				},
+				"cost": {
+					"water": 4
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.bonuses.water": 2,
+						"spells.cost.water": 1
+					}
+				}
+			},
+			{
+				"id": "sigilofairburst",
+				"name": "sigil of air burst",
+				"desc": "woven into a spell, increses the potency of air spells, at a cost.",
+				"school": "sigils",
+				"require": "g.sigillore>=7&&g.arcanescribe>0",
+				"level": 5,
+				"buy": {
+					"sigilsgem": 25
+				},
+				"cost": {
+					"air": 4
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.bonuses.air": 2,
+						"spells.cost.air": 1
+					}
+				}
+			},
+			{
+				"id": "sigilofearthburst",
+				"name": "sigil of earth burst",
+				"desc": "woven into a spell, increses the potency of earth spells, at a cost.",
+				"school": "sigils",
+				"require": "g.sigillore>=7&&g.arcanescribe>0",
+				"level": 5,
+				"buy": {
+					"sigilsgem": 25
+				},
+				"cost": {
+					"earth": 4
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.bonuses.earth": 2,
+						"spells.cost.earth": 1
+					}
+				}
+			},
+			{
+				"id": "sigiloftimestop",
+				"name": "timestop sigil",
+				"desc": "woven into a spell, briefly stops time to allow high accuracy.",
+				"school": "sigils",
+				"require": "g.sigillore>=9&&g.chronomancy>=5",
+				"level": 8,
+				"buy": {
+					"sigilsgem": 50
+				},
+				"cost": {
+					"tempus": 5
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.tohit": 25
+					}
+				}
+			},
+			{
+				"id": "sigilofsacrifice",
+				"name": "sigil of sacrifice",
+				"desc": "woven into a spell, allows you to pay blood to regain strength.",
+				"cd": 30,
+				"school": "sigils",
+				"require": "g.sigillore>=9&&g.evil>0",
+				"level": 8,
+				"buy": {
+					"sigilsgem": 50
+				},
+				"cost": {
+					"hp": 100
+				},
+				"dot": {
+					"duration": 3,
+					"mod": {
+						"player.fire.rate": 2,
+						"player.water.rate": 2,
+						"player.air.rate": 2,
+						"player.earth.rate": 2,
+						"player.mana.rate": 2
+					}
+				}
+			},
+			{
+				"id": "sigilofforce",
+				"name": "sigil of force",
+				"desc": "woven into a spell, briefly increases any physical force exerted.",
+				"school": "sigils",
+				"require": "g.sigillore>=9&&(g.bladelore+g.hammerlore)>0",
+				"level": 8,
+				"buy": {
+					"sigilsgem": 50
+				},
+				"cost": {
+					"stamina": 3
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"player.bonuses.pierce": 3,
+						"player.bonuses.slash": 3,
+						"player.bonuses.blunt": 3
+					}
+				}
+			},
+			{
+				"id": "sigilofreduction",
+				"name": "sigil of reduction",
+				"desc": "woven into a spell, briefly makes foes susceptible to your attack.",
+				"school": "sigils",
+				"require": "g.sigillore>=9&&g.shadowlore>=20",
+				"level": 8,
+				"buy": {
+					"sigilsgem": 50
+				},
+				"cost": {
+					"element": 3
+				},
+				"attack": {
+					"dot": {
+						"targets": "enemies",
+						"duration": 1,
+						"resist.shadow": -10,
+						"resist.fire": -10,
+						"resist.air": -10,
+						"resist.water": -10,
+						"resist.earth": -10,
+						"resist.light": -10
+					}
+				}
+			},
+			{
+				"id": "sigilofimprovements",
+				"name": "sigil of improvements",
+				"desc": "woven into a spell, empowers your connection with the arcane gradually.",
+				"school": "sigils",
+				"cd": 10,
+				"require": "g.sigillore>=9&&g.shadowlore>=20",
+				"level": 8,
+				"buy": {
+					"sigilsgem": 50
+				},
+				"cost": {
+					"element": 5,
+					"mana": 10
+				},
+				"result": {
+					"sigillore.max": 0.0001
+				}
+			},
+			{
+				"id": "sigilofgreed",
+				"name": "sigil of greed",
+				"desc": "woven into a spell, makes all spells spill out gold.",
+				"school": "sigils",
+				"require": "g.sigillore>=12&&g.thaumaturge>0",
+				"level": 10,
+				"buy": {
+					"sigilsgem": 100
+				},
+				"cost": {
+					"mana": 5
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"spells.cost.mana": 2,
+						"spells.effect.gold": 5
+					}
+				}
+			},
+			{
+				"id": "sigiloflife",
+				"name": "sigil of life",
+				"desc": "woven into a spell, causes all spells cast to mend wounds.",
+				"school": "sigils",
+				"require": "g.sigillore>=12&&g.thaumaturge>0",
+				"level": 10,
+				"buy": {
+					"sigilsgem": 100
+				},
+				"cost": {
+					"nature": 5
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"spells.cost.nature": 2,
+						"spells.effect.hp": 3
+					}
+				}
+			},
+			{
+				"id": "sigilofmotherearth",
+				"name": "sigil of mother earth",
+				"desc": "woven into a spell, causes your spells to consume gems in return for mana.",
+				"school": "sigils",
+				"require": "g.sigillore>=12&&g.thaumaturge>0",
+				"level": 10,
+				"buy": {
+					"sigilsgem": 100
+				},
+				"cost": {
+					"gems": 10
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"spells.cost.gems": 2,
+						"spells.effect.element": 1,
+						"spells.effect.mana": 1
+					}
+				}
+			},
+			{
+				"id": "sigilofbeginnings",
+				"name": "sigil of mother earth",
+				"desc": "woven into a spell, begins.",
+				"school": "sigils",
+				"require": "g.sigillore>=15&&g.thaumaturge>0",
+				"level": 10,
+				"buy": {
+					"sigilsgem": 100
+				},
+				"cost": {
+					"mana": 5
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"spells.effect.hp": -5000
+					}
+				}
+			},
+			{
+				"id": "sigilofendings",
+				"name": "sigil of endings",
+				"desc": "woven into a spell, ends.",
+				"school": "sigils",
+				"require": "g.sigillore>=15&&g.thaumaturge>0",
+				"level": 10,
+				"buy": {
+					"sigilsgem": 100
+				},
+				"cost": {
+					"mana": 5
+				},
+				"dot": {
+					"duration": 1,
+					"mod": {
+						"spells.effect.hp": -5000
+					}
+				}
+			}
+		],
+		"resources": [
+			{
+				"id": "sigilsgem",
+				"tags": "magicgems",
+				"name": "sigil gem",
+				"desc": "Gem inscribed with arcane sigils.",
+				"max": 2
+			}
+		],
+		"classes": [
+			{
+				"id": "arcanescribe",
+				"name": "arcane scribe",
+				"desc": "Arcane can be bent into any shape, if your skill is good enough.",
+				"tags": "t_tier3",
+				"actdesc": "Become an arcane scribe, the maker of powerul spells.",
+				"require": "g.tier2>0&&g.sigillore>=1&&g.tier3==0",
+				"cost": {
+					"research": 4000,
+					"arcana": 25,
+					"tomes": 30,
+					"managem": 50
+				},
+				"effect": {
+					"sp": 2
+				},
+				"mod": {
+					"tier3": true,
+					"sigillore.max": 2,
+					"sigillore.rate": "100+50%"
+				},
+				"flavor": "A trace of power and light"
+			},
+			{
+				"id": "thaumaturge",
+				"desc": "a maker of miracles",
+				"require": "g.tier3>0&&g.arcanescribe>0&&g.sigillore>=9",
+				"tags": "t_tier4",
+				"cost": {
+					"research": 5000,
+					"arcana": 25,
+					"tomes": 7,
+					"spiritgem": 20,
+					"runestones": 5
+				},
+				"effect": {
+					"sp": 2
+				},
+				"mod": {
+					"tier4": true,
+					"spellcraft.max": 2,
+					"spellcraft.rate": "0.3+5%",
+					"light.max": 2,
+					"light.rate": "0.2+5%",
+					"sigillore.max": 3,
+					"sigillore.rate": "200+10%"
+				}
+			}
+		]
+	}
+}

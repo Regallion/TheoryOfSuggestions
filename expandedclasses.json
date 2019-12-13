@@ -42,8 +42,8 @@
 					"divination.exp": 25
 				},
 				"result": {
-					"divination.max": 0.0083,
-					"scrying.max": 0.0083
+					"divination.max": 0.0027,
+					"scrying.max": 0.0027
 				}
 			},
 			{
@@ -129,8 +129,8 @@
 					"waterlore.exp": 20
 				},
 				"result": {
-					"firelore.max": 0.0083,
-					"waterlore.max": 0.0083
+					"firelore.max": 0.0027,
+					"waterlore.max": 0.0027
 				},
 				"flavor": "The locals suddenly seem unfriendly"
 			},
@@ -179,8 +179,8 @@
 					"hammerlore.exp": 20
 				},
 				"result": {
-					"bladelore.max": 0.0083,
-					"hammerlore.max": 0.0083
+					"bladelore.max": 0.0027,
+					"hammerlore.max": 0.0027
 				},
 				"flavor": "The demons have come"
 			},
@@ -514,7 +514,7 @@
 				},
 				"mod": {
 					"heresy.result.gold": 60,
-					"heresy.result.spiritlore.max": 0.0083
+					"heresy.result.spiritlore.max": 0.0027
 				},
 				"flavor": "Big doom."
 			},
