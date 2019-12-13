@@ -1,0 +1,888 @@
+{
+	"module": "expandedclasses",
+	"data": {
+
+		"skills": [
+			{
+				"id": "hammerlore",
+				"desc": "The anvil or the skull, it makes no difference.",
+				"require": "g.geomancer>0||g.earthshaker>0||g.titan>0||g.battlemage>0",
+				"need": "armssource",
+				"level": 3,
+				"buy": {
+					"sp": 2
+				},
+				"run": {
+					"stamina": 0.6
+				},
+				"result": {
+					"sp": 0.05
+				},
+				"mod": {
+					"player.bonuses.blunt": 1,
+					"player.hits.blunt": 1
+				}
+			}
+		],
+		"actions": [
+			{
+				"id": "heresy",
+				"name": "spread heresy",
+				"verb": "Spreading heresy",
+				"desc": "There is no truth, no salvation.",
+				"require": "(g.doomsayer+g.heresiarch)>0",
+				"perpetual": true,
+				"length": 60,
+				"run": {
+					"stamina": 1.5,
+					"mana": 1
+				},
+				"effect": {
+					"scrying.exp": 25,
+					"divination.exp": 25
+				},
+				"result": {
+					"divination.max": 0.0083,
+					"scrying.max": 0.0083
+				}
+			},
+			{
+				"id": "rainbowimbuement",
+				"name": "imbue rainbow",
+				"verb": "Imbuing rainbow",
+				"desc": "The ordinary rocks seem to take on the power by themselves.",
+				"require": "(g.wizard3)>0",
+				"perpetual": true,
+				"length": 3,
+				"cost": {
+					"gems": 1
+				},
+				"run": {
+					"mana": 1,
+					"fire": 1,
+					"water": 1,
+					"air": 1,
+					"earth": 1,
+					"light": 1,
+					"shadow": 1,
+					"nature": 1
+				},
+				"result": {
+					"managem": 1,
+					"firegem": 1,
+					"watergem": 1,
+					"airgem": 1,
+					"earthgem": 1,
+					"lightgem": 1,
+					"shadowgem": 1,
+					"naturegem": 1
+				}
+			},
+			{
+				"id": "subjugateholdings",
+				"name": "subjugate",
+				"verb": "Subjugating",
+				"desc": "They will swear fealty, or else perish.",
+				"require": "(g.warlock)>0",
+				"perpetual": true,
+				"length": 120,
+				"at": {
+					"30": {
+						"effect.gems": 0.05
+					},
+					"300": {
+						"effect.gems": 0.1
+					},
+					"900": {
+						"effect.gems": 0.2
+					}
+				},
+				"run": {
+					"stamina": 3,
+					"shadow": 3
+				},
+				"effect": {
+					"shadowlore.exp": 25,
+					"evilamt": 1,
+					"gems": 0.1
+				},
+				"result": {
+					"souls.max": 0.1,
+					"bodies.max": 0.1
+				}
+			},
+			{
+				"id": "brushfire",
+				"name": "fire management",
+				"verb": "blazing",
+				"desc": "Set and extinguish fires over a large area as training.",
+				"require": "(g.pyromancer+g.hydromancer>0)",
+				"perpetual": true,
+				"length": 60,
+				"run": {
+					"stamina": 2,
+					"fire": 2,
+					"water": 2
+				},
+				"effect": {
+					"firelore.exp": 20,
+					"waterlore.exp": 20
+				},
+				"result": {
+					"firelore.max": 0.0083,
+					"waterlore.max": 0.0083
+				},
+				"flavor": "The locals suddenly seem unfriendly"
+			},
+			{
+				"id": "oppresspeasants",
+				"name": "oppress",
+				"verb": "Oppressing",
+				"desc": "Extract tribute from nearby peasants.",
+				"require": "(g.darkmagician+g.thanophage+g.dreadlord)>0",
+				"perpetual": true,
+				"length": 50,
+				"at": {
+					"30": {
+						"effect.gold": 0.3
+					},
+					"300": {
+						"effect.gold": 0.6
+					},
+					"900": {
+						"effect.gold": 1.2
+					}
+				},
+				"run": {
+					"stamina": 1.2,
+					"shadow": 1.2
+				},
+				"effect": {
+					"shadowlore.exp": 5,
+					"evilamt": 0.1,
+					"gold": 3
+				}
+			},
+			{
+				"id": "studyblade",
+				"name": "study the blade",
+				"verb": "Blade studying",
+				"desc": "While they read the books, you studied the blade.",
+				"require": "(g.battlemage>0+g.spellblade>0)",
+				"perpetual": true,
+				"length": 60,
+				"run": {
+					"stamina": 5
+				},
+				"effect": {
+					"bladelore.exp": 20,
+					"hammerlore.exp": 20
+				},
+				"result": {
+					"bladelore.max": 0.0083,
+					"hammerlore.max": 0.0083
+				},
+				"flavor": "The demons have come"
+			},
+			{
+				"id": "skeletonize",
+				"name": "skeletonize",
+				"verb": "Skeletonizing",
+				"desc": "Convert excess people into ever-scarce skeletons.",
+				"require": "(g.reanimator>0)",
+				"perpetual": true,
+				"length": 20,
+				"run": {
+					"stamina": 1,
+					"shadow": 2
+				},
+				"result": {
+					"bones": 2,
+					"bonedust": 5,
+					"skulls": 1,
+					"bodies": 1,
+					"evil": 5
+				}
+			}
+		],
+		"upgrades": [
+			{
+				"id": "madcaper",
+				"name": "great caper",
+				"require": "g.madcap>0&&g.trickery>12",
+				"desc": "The most daring heist.",
+				"cost": {
+					"research": 7777,
+					"firegem": 77
+				},
+				"mod": {
+					"heist.run.stamina": 0.8,
+					"heist.run.mana": 0.8,
+					"heist.result.gems.min": 5,
+					"heist.result.gems.max": 5,
+					"heist.result.gold": 250
+				},
+				"flavor": "Swiggity swoogity"
+			},
+			{
+				"id": "fastcaper",
+				"name": "swift caper",
+				"require": "g.madcap>0&&g.trickery>12",
+				"desc": "They'll never smell you coming.",
+				"cost": {
+					"research": 7777,
+					"airgem": 77
+				},
+				"mod": {
+					"heist.run.stamina": "150%",
+					"heist.run.mana": "150%",
+					"heist.length": "-25%"
+				},
+				"flavor": "Blink and you'll miss it"
+			},
+			{
+				"id": "darkaura",
+				"name": "gloom",
+				"require": "(g.darkmagician+g.reanimator)>0&&g.shadowlore>10",
+				"desc": "The light dims.",
+				"cost": {
+					"research": 1000,
+					"shadow": 10
+				},
+				"mod": {
+					"player.resist.shadow": 10,
+					"player.bonus.shadow": 2,
+					"shadow.rate": 0.2
+				},
+				"flavor": "Dark, darker, yet darker"
+			},
+			{
+				"id": "skeletalservants",
+				"name": "skeletal servants",
+				"require": "g.bonemonger>0",
+				"desc": "Assemble some skeletons to cater to your needs",
+				"cost": {
+					"research": 3000,
+					"shadow": 12,
+					"bones": 20,
+					"skulls": 5
+				},
+				"mod": {
+					"stamina.rate": 0.1
+				},
+				"flavor": "Silent and resilient"
+			},
+			{
+				"id": "summonedservants",
+				"name": "summoned servants",
+				"require": "g.summoner>0",
+				"desc": "Summon some servants to assist you",
+				"cost": {
+					"research": 5000,
+					"mana": 12,
+					"managem": 20
+				},
+				"mod": {
+					"stamina.rate": 0.1
+				},
+				"flavor": "No salary required"
+			},
+			{
+				"id": "summonedworkers",
+				"name": "summoned workers",
+				"require": "g.summoner>0",
+				"desc": "Summon some workers to earn you gold",
+				"cost": {
+					"research": 5000,
+					"tempus": 8,
+					"managem": 20
+				},
+				"mod": {
+					"gold.rate": 0.2
+				},
+				"flavor": "They won't need that gold back home"
+			},
+			{
+				"id": "preservearea",
+				"name": "establish sanctuary",
+				"require": "g.warden>0",
+				"desc": "Create a forst sanctuary for all the animal friends",
+				"cost": {
+					"research": 3000,
+					"nature": 10,
+					"naturegem": 20
+				},
+				"mod": {
+					"nature.rate": 0.5,
+					"player.bonuses.nature": 5,
+					"player.resist.nature": 10
+				},
+				"flavor": "The nature repays the favor"
+			},
+			{
+				"id": "improvedskeletonize",
+				"name": "flesh-eaters",
+				"require": "g.bonemonger>0",
+				"desc": "Develop some flesh-eating beetles to improve bone procurement",
+				"cost": {
+					"research": 3000,
+					"shadow": 12,
+					"bones": 20,
+					"skulls": 5
+				},
+				"mod": {
+					"bones.rate": 0.1,
+					"bones.max": 50,
+					"skulls.max": 20,
+					"skeletonize.length": "-50%"
+				},
+				"flavor": "The chitter of their happy little wings easily drowns out the screams."
+			},
+			{
+				"id": "thanofeast",
+				"name": "blood tithe",
+				"require": "g.thanophage>0",
+				"desc": "Gold holds little value to a death eater",
+				"cost": {
+					"research": 5000,
+					"shadow": 12,
+					"bloodgem": 20
+				},
+				"mod": {
+					"oppresspeasants.effect.gold": -3,
+					"oppresspeasants.effect.hp": 5,
+					"oppresspeasants.result.souls": 2,
+					"oppresspeasants.result.bodies": 2
+				},
+				"flavor": "Eat the poor."
+			},
+			{
+				"id": "dreadextraction",
+				"name": "dread raiding",
+				"require": "g.dreadlord>0",
+				"desc": "Those who oppose you, no longer exist. There is no salvation for your victims",
+				"cost": {
+					"research": 5000,
+					"shadow": 12,
+					"shadowgem": 20
+				},
+				"mod": {
+					"oppresspeasants.effect.gold": 2,
+					"oppresspeasants.effect.gems": 0.5,
+					"oppresspeasants.result.bodies": 1
+				},
+				"flavor": "It's only what you are owed."
+			},
+			{
+				"id": "archsubjugation",
+				"name": "High subjugator",
+				"require": "g.archlock>0",
+				"desc": "Even kings are forced to pay you tribute",
+				"cost": {
+					"research": 12000,
+					"gold": 8000,
+					"firegem": 100,
+					"runestones": 10
+				},
+				"mod": {
+					"subjugateholdings.effect.firegem": 0.05,
+					"subjugateholdings.effect.gems": 0.2,
+					"subjugateholdings.result.runestones": 1
+				},
+				"flavor": "It only takes 1000 tortured souls."
+			},
+			{
+				"id": "deathempower",
+				"name": "Power of death",
+				"require": "g.deathlock>0",
+				"desc": "Amplify yourself with powers beyond the mortal realm.",
+				"cost": {
+					"research": 20000,
+					"tomes": 50,
+					"arcana": 60,
+					"firerune": 25,
+					"runestones": 40
+				},
+				"mod": {
+					"firerune.mod.fire": 0.2,
+					"spiritgem.mod.spirit": 0.01,
+					"shadowgem.mod.shadow": 0.01,
+					"firerune.mod.fire.rate": 0.05,
+					"spiritgem.mod.spirit.rate": 0.004,
+					"shadowgem.mod.shadow.rate": 0.004
+				},
+				"flavor": "Exquisite."
+			},
+			{
+				"id": "stormtaming",
+				"name": "storm taming",
+				"require": "g.stormcaller>0",
+				"desc": "Harness the power of the storms",
+				"cost": {
+					"research": 8000,
+					"gold": 3000,
+					"airgem": 20,
+					"watergem": 20
+				},
+				"mod": {
+					"water.rate": 0.5,
+					"air.rate": 0.5,
+					"water.max": 10,
+					"air.max": 10,
+					"gold.rate": 0.2
+				},
+				"flavor": "Milling time!"
+			},
+			{
+				"id": "elementalharmony",
+				"name": "elemental harmony",
+				"require": "g.elementalist>0",
+				"desc": "All elements have a place",
+				"cost": {
+					"research": 8000,
+					"gold": 3000,
+					"airgem": 20,
+					"watergem": 20
+				},
+				"mod": {
+					"player.bonuses.fire": 2,
+					"player.bonuses.water": 2,
+					"player.bonuses.air": 2,
+					"player.bonuses.earth": 2
+				},
+				"flavor": "Do not bend."
+			},
+			{
+				"id": "magicboost",
+				"name": "Mana boost",
+				"require": "g.mage>0",
+				"desc": "Learn to improve your arcane casting",
+				"cost": {
+					"research": 2000,
+					"gold": 1000,
+					"managem": 20
+				},
+				"mod": {
+					"player.bonuses.mana": 2,
+					"player.hits.mana": 2
+				},
+				"flavor": "Arcana intensifies."
+			},
+			{
+				"id": "gethigh",
+				"name": "High magic",
+				"require": "g.highmage>0",
+				"desc": "Heighten yor magic abilities with the power of gems",
+				"cost": {
+					"research": 4000,
+					"gold": 3000,
+					"managem": 50
+				},
+				"mod": {
+					"player.bonuses.mana": 2,
+					"player.hits.mana": 5
+				},
+				"flavor": "You feel hungry for some reason."
+			},
+			{
+				"id": "dhrunicwizardry",
+				"name": "Dhrunic wizardry",
+				"require": "g.wizard2>0",
+				"desc": "Incorporate runestones into your arcane casting",
+				"cost": {
+					"research": 10000,
+					"gold": 7000,
+					"managem": 50,
+					"runestones": 20,
+					"tomes": 40
+				},
+				"mod": {
+					"runestones.mod.mana.max": 0.2,
+					"runestones.mod.mana.rate": 0.02
+				},
+				"flavor": "Crunchy."
+			},
+			{
+				"id": "doomsaying",
+				"name": "Proclaim doom",
+				"require": "g.doomsayer>0",
+				"desc": "Hide no truth, remove the veil of ignorance",
+				"cost": {
+					"research": 4000,
+					"gold": 3300,
+					"managem": 50
+				},
+				"mod": {
+					"heresy.result.gold": 60,
+					"heresy.result.spiritlore.max": 0.0083
+				},
+				"flavor": "Big doom."
+			},
+			{
+				"id": "strongheresy",
+				"name": "insidious heresy",
+				"require": "g.heresiarch>0",
+				"desc": "Cure the minds of headstrong fools",
+				"cost": {
+					"research": 7000,
+					"gold": 5000,
+					"managem": 50,
+					"tome": 30
+				},
+				"mod": {
+					"heresy.result.managem": 2,
+					"heresy.result.runestones": 0.5
+				},
+				"flavor": "There is no beginning to the end."
+			},
+			{
+				"id": "feyinfluence",
+				"name": "Nature's influence",
+				"require": "g.fey>0",
+				"desc": "The grove blooms as you enter it",
+				"cost": {
+					"research": 7000,
+					"gold": 5000,
+					"naturegem": 50,
+					"tome": 30
+				},
+				"mod": {
+					"sacredgrove.mod.naturegem.rate": 0.01,
+					"sacredgrove.mod.imbuenature.cost.nature": -0.5,
+					"sacredgrove.mod.imbuenature.cost.herbs": -3
+				},
+				"flavor": "Nature finds a way."
+			},
+			{
+				"id": "kellsforest",
+				"name": "Kell's forest",
+				"require": "g.kell>0",
+				"desc": "Your own forest, full of life",
+				"cost": {
+					"research": 12000,
+					"gold": 7000,
+					"naturegem": 80,
+					"tome": 60,
+					"runestones": 5
+				},
+				"mod": {
+					"player.bonus.nature": 5,
+					"commune.result.nature.max": 0.001
+				},
+				"flavor": "Walk the untrodden paths."
+			},
+			{
+				"id": "highkellcall",
+				"name": "High call",
+				"require": "g.highkell>0",
+				"desc": "Bring together a council of all creatures of the forest",
+				"cost": {
+					"research": 15000,
+					"gold": 10000,
+					"naturegem": 100,
+					"tome": 50,
+					"runestones": 20
+				},
+				"mod": {
+					"commune.effect.stamina": 0.5,
+					"commune.effect.stress": -0.6,
+					"commune.effect.hp": 2,
+					"commune.effect.manas.value": 0.2
+				},
+				"flavor": "The squirrels are absolutely nuts."
+			},
+			{
+				"id": "elementalsynergy",
+				"name": "elemental synergy",
+				"require": "g.highelemental>0",
+				"desc": "Utilize your elements in novel ways",
+				"cost": {
+					"research": 8000,
+					"airgem": 20,
+					"watergem": 20,
+					"firegem": 20,
+					"earthgem": 20
+				},
+				"mod": {
+					"fire.mod.air.rate": 0.01,
+					"air.mod.water.rate": 0.01,
+					"water.mod.earth.rate": 0.01,
+					"earth.mod.fire.rate": 0.01
+				},
+				"flavor": "A cycle of support."
+			},
+			{
+				"id": "thanoblood",
+				"name": "blood pulse",
+				"require": "g.thanophage>0",
+				"desc": "The blood calls out to you",
+				"cost": {
+					"research": 5000,
+					"hp": 250,
+					"bloodgem": 40
+				},
+				"mod": {
+					"bloodgem.mod.hp.max": 0.5
+				},
+				"flavor": "Hold it close to your empty chest."
+			},
+			{
+				"id": "bloodpower",
+				"name": "power of blood",
+				"require": "g.bloodmage>0",
+				"desc": "The sacrifice is not in vain",
+				"cost": {
+					"research": 5000,
+					"hp": 250,
+					"bloodgem": 40
+				},
+				"mod": {
+					"bloodgem.mod.stamina.max": 0.1,
+					"bloodgem.mod.stamina.rate": 0.001
+				},
+				"flavor": "The blood does not forget."
+			},
+			{
+				"id": "heartbeat",
+				"name": "heartbeat",
+				"require": "g.bloodmage>0",
+				"desc": "You can hear it pulsing, always",
+				"cost": {
+					"research": 5000,
+					"stamina": 60,
+					"bloodgem": 40
+				},
+				"mod": {
+					"hp.mod.player.bonuses.pierce": 0.02,
+					"hp.mod.player.bonuses.blunt": 0.02,
+					"hp.mod.player.bonuses.slash": 0.02
+				},
+				"flavor": "Strike with vigor."
+			},
+			{
+				"id": "warlockflames",
+				"name": "fires of hell",
+				"require": "g.warlock>0",
+				"desc": "Burn them to cinders",
+				"cost": {
+					"research": 8000,
+					"firegem": 80,
+					"tomes": 20
+				},
+				"mod": {
+					"firegem.mod.player.bonuses.fire": 0.03,
+					"firegem.mod.fire.rate": 0.005,
+					"firegem.rate": -0.01
+				},
+				"flavor": "Great smoky flavor."
+			},
+			{
+				"id": "bonedance",
+				"name": "dancing bones",
+				"require": "g.reanimator>0",
+				"desc": "The bones dance in unison, soothing your nerves",
+				"cost": {
+					"research": 1000,
+					"shadow": 8,
+					"bones": 20
+				},
+				"mod": {
+					"rest.effect.hp": 1,
+					"rest.effect.stamina": 0.5,
+					"rest.effect.shadow": 0.2
+				},
+				"flavor": "Not as spooky as you were led to believe"
+			}
+		],
+		"homes": [
+			{
+				"id": "madcaphouse",
+				"name": "mad house",
+				"desc": "We are all mad here",
+				"cost": {
+					"gold": 777,
+					"research": 777,
+					"gems": 77
+				},
+				"require": "g.madcap>0",
+				"mod": {
+					"minions.max": 77,
+					"space.max": 77,
+					"furniture.cost.space": "-77%"
+				}
+			},
+			{
+				"id": "avatarhouse",
+				"name": "Heart of the elements",
+				"desc": "Elements, guide me!",
+				"cost": {
+					"airrune": 20,
+					"firerune": 20,
+					"waterrune": 20,
+					"earthrune": 20
+				},
+				"require": "g.c_avatar>0",
+				"mod": {
+					"minions.max": 20,
+					"space.max": 500,
+					"element.rate": 1,
+					"runechest.cost.space": -1,
+					"treasureroom.mod.gembox.max": 2,
+					"runechest.mod.t_runes.max":2,
+					"t_runes.max.mod.element.max": 0.05,
+					"t_runes.max.mod.element.rate": 0.005
+				}
+			},
+			{
+				"id": "academy",
+				"desc": "austere house of learning",
+				"cost": {
+					"gold": 2000,
+					"research": 500
+				},
+				"require": "g.research>=400&&g.magician>0",
+				"mod": {
+					"minions.max": 20,
+					"space.max": 150,
+					"bookcase.cost.space": -1,
+					"studyroom.cost.space": -10,
+					"arcanestudy.cost.space": -10,
+					"bookcase.mod.tomes.max": 1,
+					"research.rate": 5
+				}
+			},
+			{
+				"id": "tower",
+				"desc": "DELETE THIS - NO USE.",
+				"cost": {
+					"gold": 2500
+				},
+				"require": "g.magician>0&&g.arcana>=20",
+				"mod": {
+					"minions.max": 5,
+					"space.max": 55,
+					"airlore.max": 1,
+					"airlore.rate": 0.1
+				}
+			},
+			{
+				"id": "lighthouse2",
+				"name": "Light house",
+				"desc": "House of lights and books.",
+				"cost": {
+					"gold": 7000,
+					"lightgem": 200,
+					"runestones": 15,
+					"gate": 1
+				},
+				"require": "g.wizard>0&&g.arcana>=20",
+				"mod": {
+					"minions.max": 5,
+					"space.max": 400,
+					"lore.max": 5,
+					"manalore2.max": 3,
+					"lexyrinth.cost.space": -50,
+					"lexyrinth.max": 1
+				}
+			}
+		],
+		"furniture": [
+			{
+				"id": "traininggrounds",
+				"name": "training grounds",
+				"desc": "A place to sharpen your swords and skills.",
+				"require": "g.battlemage>0",
+				"max": 2,
+				"repeat": true,
+				"cost": {
+					"gold": 300,
+					"stamina": 30,
+					"space": 5
+				},
+				"mod": {
+					"stamina.rate": -0.2,
+					"bladelore.max": 2,
+					"bladelore.rate": "50+100%",
+					"hammerlore.max": 2,
+					"hammerlore.rate": "50+100%",
+					"hp.max": 20,
+					"player.defense": 10
+				}
+			},
+			{
+				"id": "sorcererspire",
+				"name": "sorcerer's spire",
+				"desc": "A towering spire concentrating magical energies.",
+				"require": "g.sorcerer>0",
+				"max": 2,
+				"repeat": true,
+				"cost": {
+					"managem": 50,
+					"runestones": 5
+				},
+				"mod": {
+					"manas.rate": 0.2
+				}
+			},
+			{
+				"id": "sacredgrove",
+				"name": "sacred grove",
+				"desc": "A perfect place for druidic rituals.",
+				"require": "g.druid>0||g.fey>0",
+				"max": 2,
+				"repeat": true,
+				"cost": {
+					"naturegem": 50
+				},
+				"mod": {
+					"imbuelifegem.cost.nature": -2,
+					"naturelore.rate": 50
+				}
+			},
+			{
+				"id": "thaumaforge",
+				"name": "Spell forge",
+				"desc": "Forge wondrous spells.",
+				"require": "g.thaumaturge>0",
+				"max": 1,
+				"repeat": true,
+				"cost": {
+					"gold": 5000,
+					"runestones": 20,
+					"gems": 250,
+					"space": 20
+				},
+				"mod": {
+					"spellcraft.max": 3,
+					"spellcraft.rate": "15+20%",
+					"spelllist.max": 20
+				}
+			},
+			{
+				"id": "astraltower",
+				"name": "astral tower",
+				"desc": "Only those with the Sight can perceive it.",
+				"require": "g.astralseer>0",
+				"max": 1,
+				"repeat": true,
+				"cost": {
+					"gold": 5000,
+					"runestones": 50,
+					"gems": 250,
+					"sindel": 5,
+					"managem": 150
+				},
+				"mod": {
+					"space.max": 20,
+					"sindel.rate": "25%",
+					"sindel.max": 5,
+					"imbuemanagem.result.managem": 1,
+					"starfall.cd": -50,
+					"starfall.attack.dot.duration": "-75%",
+					"starfall.attack.dot.dmg.min": "300%",
+					"starfall.attack.dot.dmg.max": "300%"
+				}
+			}
+		]
+	}
+}

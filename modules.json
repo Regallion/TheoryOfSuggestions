@@ -5,6 +5,6 @@
 		"materials", "enchants", "sections", "potions", "encounters", "locales","stressors","rares"
 	],
 	"modules":[
-		"patrons", "winter" , "puppeteer"
+		"patrons", "winter" , "puppeteer", "hermit", "expandedclasses"
 	]
 }

@@ -1,13 +1,14 @@
 {
 	"module": "puppeteer",
 	"data": {
+
 		"skills": [
 			{
 				"id": "puppetry",
 				"name": "puppetry",
 				"require": "g.crafting>=8&&g.spiritlore>=5",
 				"desc": "Creating and animating magical puppets",
-				"level": 3,
+				"level": 1,
 				"run": {
 					"stamina": 0.4
 				},
@@ -26,7 +27,7 @@
 				"name": "animation",
 				"require": "g.puppetry>=5&&g.spiritlore>=10",
 				"desc": "Imbuing objects with movement",
-				"level": 5,
+				"level": 3,
 				"run": {
 					"stamina": 0.7
 				},
@@ -67,7 +68,7 @@
 				"name": "magiphysics",
 				"require": "g.lore>=25&&g.planeslore>=15&&g.tier4>0",
 				"desc": "The universe is just an equation to solve.",
-				"level": 5,
+				"level": 12,
 				"run": {
 					"stamina": 0.7
 				},
@@ -85,7 +86,7 @@
 				"name": "automata sculpting",
 				"require": "g.crafting>=18&&g.puppetry>=8&&g.animation>=6&&g.magiphysics>=5&&(g.mechanist+g.mechamancer)>0",
 				"desc": "They think, therefore they are.",
-				"level": 15,
+				"level": 13,
 				"run": {
 					"stamina": 1
 				},
@@ -575,7 +576,7 @@
 				"require": "g.automatasculpting>=10",
 				"max": 1,
 				"cost": {
-					"automata": 20,
+					"automatas": 20,
 					"runestones": 100,
 					"firerune": 50,
 					"airrune": 50,
@@ -591,7 +592,7 @@
 			{
 				"id": "automatamastery",
 				"name": "automata mastery",
-				"desc": "a complete mastery over all things mechanical",
+				"desc": "A complete mastery over all things mechanical",
 				"require": "g.mechamancer>0",
 				"max": 1,
 				"cost": {
@@ -622,7 +623,7 @@
 				"mod": {
 					"assembleautomata.result.automatas": 1,
 					"assembleautomata.length": -5,
-					"assembleautomata.result.automatasculpting.max": 0.001
+					"assembleautomata.cost.runestones": -1
 				}
 			},
 			{
@@ -642,7 +643,7 @@
 		"spells": [
 			{
 				"id": "mk_puppet",
-				"name": "animate puppet",
+				"name": "animate puppet attacker",
 				"school": "animation",
 				"require": "g.puppetry>=5",
 				"level": 1,
@@ -651,14 +652,14 @@
 					"puppets": 5
 				},
 				"cost": {
-					"puppets": 1,
+					"puppets": 5,
 					"spirit": 10
 				},
 				"effect": "puppetattacker"
 			},
 			{
 				"id": "mk_charger",
-				"name": "assemble charger",
+				"name": "assemble mecha-charger",
 				"school": "animation",
 				"require": "g.machinacreation>=5",
 				"level": 1,
@@ -667,9 +668,9 @@
 					"machinae": 10
 				},
 				"cost": {
-					"machinae": 1
+					"machinae": 5
 				},
-				"effect": "charger"
+				"effect": "mechacharger"
 			},
 			{
 				"id": "mk_autoslayer",
@@ -682,9 +683,55 @@
 					"automatas": 20
 				},
 				"cost": {
-					"automatas": 2
+					"automatas": 5
 				},
 				"effect": "autoslayer"
+			},
+			{
+				"id": "mk_puppetD",
+				"name": "animate puppet defender",
+				"school": "animation",
+				"require": "g.puppetry>=5&&g.puppeteer>0",
+				"level": 1,
+				"buy": {
+					"research": 500,
+					"puppets": 5
+				},
+				"cost": {
+					"puppets": 5,
+					"spirit": 10
+				},
+				"effect": "puppetdefender"
+			},
+			{
+				"id": "mk_mender",
+				"name": "assemble mecha-mender",
+				"school": "animation",
+				"require": "g.machinacreation>=5&&g.mechanist>0",
+				"level": 1,
+				"buy": {
+					"research": 8000,
+					"machinae": 10
+				},
+				"cost": {
+					"machinae": 5
+				},
+				"effect": "mechamender"
+			},
+			{
+				"id": "mk_autocaster",
+				"name": "Shape autocaster",
+				"school": "animation",
+				"require": "g.automatasculpting>=5&&g.mechamancer>0",
+				"level": 1,
+				"buy": {
+					"research": 8000,
+					"automatas": 20
+				},
+				"cost": {
+					"automatas": 5
+				},
+				"effect": "autocaster"
 			}
 		],
 		"homes": [
