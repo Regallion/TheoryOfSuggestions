@@ -658,7 +658,7 @@
 			},
 			{
 				"id": "mk_autoslayer",
-				"name": "Shape autoslayer",
+				"name": "shape autoslayer",
 				"school": "animation",
 				"require": "g.automatasculpting>=5",
 				"level": 1,
@@ -704,7 +704,7 @@
 			},
 			{
 				"id": "mk_autocaster",
-				"name": "Shape autocaster",
+				"name": "shape autocaster",
 				"school": "animation",
 				"require": "g.automatasculpting>=5&&g.mechamancer>0",
 				"level": 1,
