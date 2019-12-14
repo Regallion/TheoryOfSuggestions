@@ -1,11 +1,9 @@
 {
 	"module": "puppeteer",
 	"data": {
-
 		"skills": [
 			{
 				"id": "puppetry",
-				"name": "puppetry",
 				"require": "g.crafting>=8&&g.spiritlore>=5",
 				"desc": "Creating and animating magical puppets",
 				"level": 1,
@@ -18,13 +16,12 @@
 				"mod": {
 					"minions.puppet.hp": "1%",
 					"minions.puppet.dmg": "1%",
-					"minions.maxAllies": 0.25,
+					"allies.max": 0.25,
 					"research.max": 5
 				}
 			},
 			{
 				"id": "animation",
-				"name": "animation",
 				"require": "g.puppetry>=5&&g.spiritlore>=10",
 				"desc": "Imbuing objects with movement",
 				"level": 3,
@@ -38,7 +35,7 @@
 					"minions.puppet.dmg": "1%",
 					"minions.machina.dmg": "1%",
 					"puppetry.max": 0.2,
-					"minions.maxAllies": 0.25,
+					"allies.max": 0.25,
 					"research.max": 5
 				}
 			},
@@ -47,7 +44,7 @@
 				"name": "mechanical construction",
 				"require": "g.crafting>=12&&g.puppetry>=6&&g.animation>=5&&g.tier2>0",
 				"desc": "Assembling magical machines",
-				"level": 5,
+				"level": 3,
 				"run": {
 					"stamina": 0.7
 				},
@@ -59,7 +56,7 @@
 					"minions.machina.dmg": "1%",
 					"puppetry.max": 0.2,
 					"animation.max": 0.2,
-					"minions.maxAllies": 0.25,
+					"allies.max": 0.25,
 					"research.max": 5
 				}
 			},
@@ -103,7 +100,7 @@
 					"puppetry.max": 0.2,
 					"animation.max": 0.2,
 					"machinacreation.max": 0.2,
-					"minions.maxAllies": 0.25,
+					"allies.max": 0.25,
 					"research.max": 5
 				}
 			}
@@ -220,7 +217,7 @@
 			},
 			{
 				"id": "futurecouncil",
-				"name": "Plan future",
+				"name": "plan future",
 				"desc": "Counsel with your automata to plan the future.",
 				"verb": "Counseling",
 				"require": "g.mechamancer>0",
@@ -268,7 +265,7 @@
 		"upgrades": [
 			{
 				"id": "clockworkexpansion",
-				"name": "Clockwork expansion",
+				"name": "clockwork expansion",
 				"desc": "Expand the clockwork home with additional materials",
 				"require": "g.puppetry>=5&&(g.puppeteer+g.mechanist+g.mechamancer)>0",
 				"max": 2,
@@ -282,7 +279,7 @@
 			},
 			{
 				"id": "clockworkexpansion2",
-				"name": "Clockwork expansion",
+				"name": "clockwork expansion",
 				"desc": "Expand the clockwork home with additional materials",
 				"require": "g.machinacreation>=5&&g.clockworkexpansion>=2",
 				"max": 2,
@@ -296,7 +293,7 @@
 			},
 			{
 				"id": "clockworkexpansion3",
-				"name": "Clockwork expansion",
+				"name": "clockwork expansion",
 				"desc": "Expand the clockwork home with additional materials",
 				"require": "g.automatasculpting>=5&&g.clockworkexpansion2>=2",
 				"max": 2,
@@ -310,7 +307,7 @@
 			},
 			{
 				"id": "clockworkexpansione",
-				"name": "Endless expansion",
+				"name": "endless expansion",
 				"desc": "More",
 				"require": "g.clockworkexpansion3>=2",
 				"max": 500,
@@ -332,7 +329,7 @@
 			},
 			{
 				"id": "strongstrings",
-				"name": "Puppet strings",
+				"name": "puppet strings",
 				"desc": "Buy some extra-strength strings for your puppetry needs",
 				"require": "g.puppetry>=5",
 				"max": 2,
@@ -347,7 +344,7 @@
 			},
 			{
 				"id": "ebonwoodsupply",
-				"name": "Ebonwood supply",
+				"name": "ebonwood supply",
 				"desc": "Procure a supply of ebonwood to strengthen your puppets",
 				"require": "g.puppetry>=9",
 				"max": 1,
@@ -364,7 +361,7 @@
 			},
 			{
 				"id": "runicreinforcement",
-				"name": "Runic reinforcement",
+				"name": "runic reinforcement",
 				"desc": "Carve the runes of strength and protection into your puppets",
 				"require": "g.puppeteer>0&&g.runiclore>=3",
 				"max": 1,
@@ -381,7 +378,7 @@
 			},
 			{
 				"id": "proxies",
-				"name": "Puppet proxies",
+				"name": "puppet proxies",
 				"desc": "Throw your voice and will through specially-made puppets",
 				"require": "g.puppetry>=5",
 				"max": 1,
@@ -426,7 +423,7 @@
 			},
 			{
 				"id": "clockworkbutler",
-				"name": "Clockwork butler",
+				"name": "clockwork butler",
 				"desc": "Serves you tea, scones and books.",
 				"require": "g.machinacreation>=5",
 				"max": 1,
@@ -441,7 +438,7 @@
 			},
 			{
 				"id": "precisionengineering",
-				"name": "Precision engineering",
+				"name": "precision engineering",
 				"desc": "Precision to the millimeter.",
 				"require": "g.machinacreation>=5",
 				"max": 1,
@@ -458,7 +455,7 @@
 			},
 			{
 				"id": "lubricant",
-				"name": "Oil of slipping",
+				"name": "oil of slipping",
 				"desc": "Adapt a common magical item as a lubricant for your machina.",
 				"require": "g.machinacreation>=7",
 				"max": 1,
@@ -571,12 +568,12 @@
 			},
 			{
 				"id": "autoagents",
-				"name": "Automata agents",
+				"name": "automata agents",
 				"desc": "Those agents are capable of indepentent completion of any desired task",
 				"require": "g.automatasculpting>=10",
 				"max": 1,
 				"cost": {
-					"automatas": 20,
+					"automata": 20,
 					"runestones": 100,
 					"firerune": 50,
 					"airrune": 50,
@@ -592,7 +589,7 @@
 			{
 				"id": "automatamastery",
 				"name": "automata mastery",
-				"desc": "A complete mastery over all things mechanical",
+				"desc": "a complete mastery over all things mechanical",
 				"require": "g.mechamancer>0",
 				"max": 1,
 				"cost": {
@@ -625,19 +622,6 @@
 					"assembleautomata.length": -5,
 					"assembleautomata.cost.runestones": -1
 				}
-			},
-			{
-				"id": "masterassembler",
-				"name": "master of assembly",
-				"desc": "Remarkable efficiency in creating any kind of form",
-				"require": "(g.mechamancer+g.mechanist)>0",
-				"max": 1,
-				"cost": {
-					"gold": 5000
-				},
-				"mod": {
-					"minions.cost.mult": -0.5
-				}
 			}
 		],
 		"spells": [
@@ -655,7 +639,7 @@
 					"puppets": 5,
 					"spirit": 10
 				},
-				"effect": "puppetattacker"
+				"result": "puppetattacker"
 			},
 			{
 				"id": "mk_charger",
@@ -670,7 +654,7 @@
 				"cost": {
 					"machinae": 5
 				},
-				"effect": "mechacharger"
+				"result": "mechacharger"
 			},
 			{
 				"id": "mk_autoslayer",
@@ -685,7 +669,7 @@
 				"cost": {
 					"automatas": 5
 				},
-				"effect": "autoslayer"
+				"result": "autoslayer"
 			},
 			{
 				"id": "mk_puppetD",
@@ -701,7 +685,7 @@
 					"puppets": 5,
 					"spirit": 10
 				},
-				"effect": "puppetdefender"
+				"result": "puppetdefender"
 			},
 			{
 				"id": "mk_mender",
@@ -716,7 +700,7 @@
 				"cost": {
 					"machinae": 5
 				},
-				"effect": "mechamender"
+				"result": "mechamender"
 			},
 			{
 				"id": "mk_autocaster",
@@ -731,7 +715,7 @@
 				"cost": {
 					"automatas": 5
 				},
-				"effect": "autocaster"
+				"result": "autocaster"
 			}
 		],
 		"homes": [
@@ -853,7 +837,6 @@
 		"resources": [
 			{
 				"id": "puppets",
-				"name": "puppets",
 				"desc": "Easily controlled, yet inert.",
 				"max": 20,
 				"flavor": "A skilled user could put on a marvellous show"
@@ -873,14 +856,15 @@
 				"flavor": "It's not smarter than you, surely."
 			}
 		],
-		"minions": [
+		"monsters": [
 			{
 				"id": "puppetattacker",
 				"tags": "puppet",
-				"name": "Aggressor",
+				"name": "aggressor",
 				"level": 10,
 				"evil": 50,
 				"kind": "puppet",
+				"noproc": true,
 				"hp": 200,
 				"tohit": 10,
 				"defense": 20,
@@ -928,6 +912,7 @@
 				"level": 30,
 				"evil": 50,
 				"kind": "automata",
+				"noproc": true,
 				"hp": 700,
 				"tohit": 20,
 				"defense": 50,
@@ -938,7 +923,7 @@
 						"dot": {
 							"kind": "Bleed",
 							"duration": 30,
-							"dmg": "20"
+							"dmg": 20
 						}
 					},
 					{
@@ -979,7 +964,7 @@
 					{
 						"name": "Recover",
 						"targets": "self",
-						"effect": {
+						"result": {
 							"hp": 250
 						}
 					}
@@ -989,7 +974,6 @@
 		"classes": [
 			{
 				"id": "puppeteer",
-				"name": "puppeteer",
 				"desc": "Assemble and control your own minions",
 				"tags": "t_tier1",
 				"require": "g.tier0>0&&g.puppetry>=5&&g.tier1==0",
@@ -1002,7 +986,7 @@
 					"tier1": true,
 					"puppetry.max": 2,
 					"animation.max": 1,
-					"minions.maxAllies": 5,
+					"allies.max": 5,
 					"clockworkhome.mod.space.max": 50
 				},
 				"flavor": "No matter what, the strings would not break."
@@ -1025,7 +1009,7 @@
 					"puppetry.max": 1,
 					"animation.max": 2,
 					"machinacreation.max": 2,
-					"minions.maxAllies": 5,
+					"allies.max": 5,
 					"clockworkhome.mod.space.max": 100
 				},
 				"flavor": "What is a man? An inefficient form of labor."
@@ -1048,7 +1032,7 @@
 					"animation.max": 1,
 					"machinacreation.max": 2,
 					"automatasculpting.max": 3,
-					"minions.maxAllies": 5,
+					"allies.max": 5,
 					"clockworkhome.mod.space.max": 150
 				},
 				"flavor": "If you want a better future, make better people."
