@@ -4,7 +4,7 @@
 		"skills": [
 			{
 				"id": "sigillore",
-				"name": "Sigil lore",
+				"name": "sigil lore",
 				"desc": "Study the art of embedding sigils into crafted spells. This is considered to be an extemely advanced discipline by most.",
 				"require": "g.spellcraft>=5",
 				"level": 30,
@@ -481,7 +481,7 @@
 			},
 			{
 				"id": "sigilofbeginnings",
-				"name": "sigil of mother earth",
+				"name": "sigil of beginnings",
 				"desc": "woven into a spell, begins.",
 				"school": "sigils",
 				"require": "g.sigillore>=15&&g.thaumaturge>0",
