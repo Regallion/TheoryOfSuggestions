@@ -209,6 +209,9 @@
 				"need":"workspace",
 				"desc":"Assemble a machina.",
 				"length": 10,
+				"fill":[
+					"machinae"
+				],
 				"cost": {
 					"gems": 5,
 					"gold": 250,
@@ -253,6 +256,9 @@
 				"need":"workspace",
 				"desc":"Create an automata.",
 				"length": 10,
+				"fill":[
+					"automatas"
+				],
 				"cost": {
 					"gold": 1000,
 					"research": 1000,
@@ -786,7 +792,7 @@
 			{
 				"id":"machinagarage",
 				"name":"machina garage",
-				"desc":"A place to tinker with your machina.",
+				"desc":"A place to tinker with your machinae.",
 				"require":"g.machinacreation>=7",
 				"max": 2,
 				"cost": {
@@ -804,7 +810,7 @@
 			{
 				"id":"machinaautomation",
 				"name":"machina assembly line",
-				"desc":"A dedicated assembly line for automated production of machina.",
+				"desc":"A dedicated assembly line for automated production of machinae.",
 				"require":"mechanist",
 				"max": 2,
 				"cost": {
